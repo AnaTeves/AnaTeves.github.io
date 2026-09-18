@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Luz Teves Tessaro | Portfolio</title>
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Fuentes de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #0284c7;
+            --border: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header / Hero */
+        header {
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        header h2 {
+            font-size: 1.3rem;
+            color: var(--accent);
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        header p {
+            max-width: 650px;
+            margin: 0 auto 25px;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: #0f172a;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--card-bg);
+        }
+
+        /* Secciones */
+        section {
+            padding: 50px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            color: var(--accent);
+        }
+
+        /* Grid de Proyectos */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .project-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .project-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            background-color: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Habilidades */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+
+        .skill-category h4 {
+            color: var(--accent);
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skill-category li::before {
+            content: "•";
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header / Perfil -->
+        <header>
+            <h1>Ana Luz Teves Tessaro</h1>
+            <h2>Analista Programadora & Futura Lic. en Sistemas de Información</h2>
+            <p>
+                Especializada en desarrollo backend, procesamiento de datos geoespaciales, arquitecturas cloud y diseño de bases de datos.
+            </p>
+            <div class="social-links">
+                <a href="https://github.com/AnaTeves" target="_blank" class="btn btn-outline">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/ana-luz-teves-tessaro-525018316/" target="_blank" class="btn btn-outline">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="mail:lutevestessaro@gmail.com" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> Contactar
+                </a>
+            </div>
+        </header>
+
+        <!-- Proyectos -->
+        <section id="proyectos">
+            <h2 class="section-title"><i class="fas fa-code"></i> Proyectos Destacados</h2>
+            <div class="projects-grid">
+
+                <!-- Tesis -->
+                <div class="project-card">
+                    <div>
+                        <h3>Sistema Híbrido SDSS (Tesis)</h3>
+                        <p>Diseño e implementación de una arquitectura de procesamiento distribuido para grandes volúmenes de datos satelitales y vectoriales en la nube.</p>
+                        <div class="tech-tags">
+                            <span class="tag">Google Earth Engine</span>
+                            <span class="tag">PostgreSQL/PostGIS</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">GeoPandas</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/AnaTeves" target="_blank" class="btn btn-outline" style="align-self: flex-start;">Ver detalles <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Sistema de Ventas Java -->
+                <div class="project-card">
+                    <div>
+                        <h3>Sistema de Gestión de Ventas</h3>
+                        <p>Aplicación de escritorio comercial bajo arquitectura MVC con gestión de roles (Administrador, Gerente, Vendedor), servicios backend y documentación de sistemas.</p>
+                        <div class="tech-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">JavaFX</span>
+                            <span class="tag">SQL Server</span>
+                            <span class="tag">MVC</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/AnaTeves" target="_blank" class="btn btn-outline" style="align-self: flex-start;">Ver Repositorio <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- IA / Redes Neuronales -->
+                <div class="project-card">
+                    <div>
+                        <h3>Agente Inteligente y Redes Neuronales</h3>
+                        <p>Entrenamiento e implementación de modelos de aprendizaje automático y desarrollo de agentes autónomos para la toma de decisiones basada en datos.</p>
+                        <div class="tech-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Redes Neuronales</span>
+                            <span class="tag">Agentes IA</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/AnaTeves" target="_blank" class="btn btn-outline" style="align-self: flex-start;">Ver Repositorio <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Freelance CREDITPLAN -->
+                <div class="project-card">
+                    <div>
+                        <h3>Desarrollo Backend (Creditplan Italia)</h3>
+                        <p>Optimización de consultas a bases de datos, resolución de errores en el entorno backend.</p>
+                        <div class="tech-tags">
+                            <span class="tag">Node.js</span>
+                            <span class="tag">ReactJS</span>
+                            <span class="tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Habilidades Técnicas -->
+        <section id="habilidades">
+            <h2 class="section-title"><i class="fas fa-tools"></i> Habilidades Técnicas</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Lenguajes</h4>
+                    <ul>
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>SQL</li>
+                        <li>JavaScript (Node.js)</li>
+                        <li>PHP</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Bases de Datos & Cloud</h4>
+                    <ul>
+                        <li>PostgreSQL / PostGIS</li>
+                        <li>SQL Server</li>
+                        <li>MySQL</li>
+                        <li>Google Earth Engine</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Datos & IA</h4>
+                    <ul>
+                        <li>GeoPandas / Pandas</li>
+                        <li>rasterstats</li>
+                        <li>Redes Neuronales</li>
+                        <li>Agentes Inteligentes</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Herramientas & Metodologías</h4>
+                    <ul>
+                        <li>Git / GitHub</li>
+                        <li>Arquitectura MVC</li>
+                        <li>Modelado E-R</li>
+                        <li>Documentación Técnica</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Educación -->
+        <section id="educacion">
+            <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Formación</h2>
+            <div style="background-color: var(--card-bg); padding: 25px; border-radius: 12px; border: 1px solid var(--border);">
+                <h3 style="color: var(--text-primary); font-size: 1.2rem;">Licenciatura en Sistemas de Información</h3>
+                <p style="color: var(--accent); font-size: 0.95rem;">FaCENA - Universidad Nacional del Nordeste (UNNE) | Cursando última materia y en desarrollo de tesis</p>
+                
+                <h3 style="color: var(--text-primary); font-size: 1.2rem; margin-top: 15px;">Analista Programadora (Título Intermedio)</h3>
+                <p style="color: var(--accent); font-size: 0.95rem;">FaCENA - Universidad Nacional del Nordeste (UNNE)</p>
+
+                <h3 style="color: var(--text-primary); font-size: 1.2rem; margin-top: 15px;">Intercambio Académico Internacional</h3>
+                <p style="color: var(--accent); font-size: 0.95rem;">Universidade Federal de Santa Maria (UFSM) - Brasil (2025)</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2026 Ana Luz Teves Tessaro — Corrientes, Argentina</p>
+            <p style="margin-top: 5px;">Alojado en <a href="https://pages.github.com/" target="_blank">GitHub Pages</a></p>
+        </footer>
+    </div>
+
+</body>
+</html>
